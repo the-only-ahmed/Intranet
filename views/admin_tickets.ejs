@@ -1,0 +1,30 @@
+<h1>Admin - Ticket list</h1>
+<% if (typeof user != 'undefined') { %>
+	<table>
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Status</th>
+		<th>Author</th>
+		<th>Date</th>
+	</tr>
+	</thead>
+	<tbody>
+	<% ticket_list.forEach(function(element){ %>
+	<tr>
+		<td><a href = 'admin_ticket_show_id?id=<%= element._id %>'> <strong><%= element.title %></strong> </a></td>
+		
+		<% if (element.status == "open") {%>
+			<td><%= element.status %> 
+			<a href='ticket_close?id=<%= element._id %>'> Close ticket </a></td>
+		<% }else{ %>
+			<td><%= element.status %>
+			<a href='ticket_open?id=<%= element._id %>'> Open ticket </a></td>
+		<% } %>
+		<td><%= element.author %></td>
+		<td><%= element.date %></td>
+	</tr>
+	<% }) %>
+	</tbody>
+	</table>
+<% } %>

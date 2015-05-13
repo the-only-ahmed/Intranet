@@ -1,0 +1,11 @@
+<h1>Forum</h1>
+
+Choose categorie: <br>
+
+<% categs.forEach(function(categ){ %>
+	<table>
+		<tr>
+			<td><a href = 'forum_show_threads?name=<%= categ.name %>'> <strong><%= categ.name %></a></td>
+		</tr>
+	</table>
+<% }) %>

@@ -1,0 +1,23 @@
+<h1>Ticket</h1>
+<% if (typeof user != 'undefined') { %>
+	<table>
+	Title:
+	<%= ticket.title %> <br>
+	Content:
+	<%= ticket.content %> <br>
+	Date:
+	<%= ticket.date %> <br>
+	<h1>Answers</h1>
+	<br>
+	<% answers.forEach(function(answer){ %>
+		Author: <%= answer.author %><br>
+		Content: <%= answer.content %><br>
+		Date: <%= answer.date %><br>
+		<br>
+	<% }) %>
+
+	<br><br>
+
+	<a href='ticket_add_answer?id=<%= ticket._id %>'> Add answer </a>
+	<a href='ticket_delete?id=<%= ticket._id %>'> delete Ticket </a>
+<% } %>

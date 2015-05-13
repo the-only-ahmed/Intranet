@@ -1,0 +1,35 @@
+<h1>Admin - Add Activite</h1>
+
+<form method = 'post'>
+	<input type = "text" name = "name" placeholder = "Name"> <br>
+
+	<input type = "textarea" name = "content" placeholder = "Content"> <br>
+
+	<input type = "number" name = "place" placeholder = "Place"> <br>
+
+	<input type = "date" name = "start_subscribe" placeholder = "start_subscribe"> <br>
+
+	<input type = "date" name = "end_subscribe" placeholder = "end_subscribe"> <br>
+
+	<input type = "date" name = "start_activite" placeholder = "start_activite"> <br>
+
+	<input type = "date" name = "end_activite" placeholder = "end_activite"> <br>
+
+	<input type = "text" name = "group_min" placeholder = "Nombre min par groupe">
+	<input type = "text" name = "group_max" placeholder = "Nombre max par groupe"> <br>
+
+	<input type = "text" name = "peercorrecting" placeholder = "Nombre de peercorrecting"> <br>
+
+	<input type= "radio" name="goup_auto" value="auto"> Group_auto
+	<input type= "radio" name="goup_auto" value="manual"> Manual <br>
+
+	<input type= "radio" name="type" value="1"> Projet
+	<input type= "radio" name="type" value="0"> Examen
+	<input type= "radio" name="type" value="0"> TD <br>
+
+	<input type = "number" name = "credit" placeholder = "Credit"> <br>
+
+	<input type = "text" name = "id_module" value = "<%=id_module%>" hidden>
+
+	<input type = "submit" value = "OK">
+</form>

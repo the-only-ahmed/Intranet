@@ -1,0 +1,156 @@
+<h1>Admin - Modules</h1>
+<% if (typeof group != 'undefined' && group == 'admin') { %>
+	<table>
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Content</th>
+		<th>Place</th>
+		<th>Start_subscribe</th>
+		<th>End_subscribe</th>
+		<th>Start_module</th>
+		<th>End_module</th>
+		<th>Credit</th>
+		<th>Update</th>
+	</tr>
+	</thead>
+	<tbody>
+	<% modules.forEach(function(element)
+	{ %>
+	<tr>
+		<td>
+			<a href="admin_activite_show?id=<%= element._id %>"><strong><%= element.name %></strong></a>
+		</td>
+		<td>
+			<%= element.content %>
+		</td>
+		<td>
+			<%= element.place %>
+		</td>
+		<td>
+			<%= element.start_subscribe %>
+		</td>
+		<td>
+			<%= element.end_subscribe %>
+		</td>
+		<td>
+			<%= element.start_module %>
+		</td>
+		<td>
+			<%= element.end_module %>
+		</td>
+		<td>
+			<%= element.credit %>
+		</td>
+
+		<td>
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "text" name = "update[name]" placeholder = "New name">
+				<input type = "submit" value = "OK">
+				<br/>
+			</form>
+
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "text" name = "update[content]" placeholder = "New content">
+				<input type = "submit" value = "OK">
+				<br/>
+			</form>
+
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "number" name = "update[place]" placeholder = "Place">
+				<input type = "submit" value = "OK">
+				<br/>
+			</form>
+
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "date" name = "update[start_subscribe]" placeholder = "New start_subscribe">
+				<input type = "submit" value = "OK">
+				<br/>
+			</form>
+
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "date" name = "update[end_subscribe]" placeholder = "New end_subscribe">
+				<input type = "submit" value = "OK">
+				<br/>
+			</form>
+
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "date" name = "update[start_module]" placeholder = "New start_module">
+				<input type = "submit" value = "OK">
+				<br>
+			</form>
+
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "date" name = "update[end_module]" placeholder = "New end_module">
+				<input type = "submit" value = "OK">
+				<br>
+			</form>
+
+			<form method = 'post'>
+				<input type = "text" name = "id" value = '<%=element._id%>' hidden>
+				<input type = "number" name = "update[credit]" placeholder = "New credit">
+				<input type = "submit" value = "OK">
+				<br>
+			</form>
+		</td>
+		
+		<td>
+			<form method = 'post'>
+				<input type = "text" name = "id" hidden>
+				<input type = "text" name = 'delete' value = '<%=element._id%>' hidden>
+				<input type = "submit" value = "Delete">
+			</form>
+		</td>
+	</tr>
+	<% }) %>
+	<tr>
+		<form method = 'post'>
+			<td>
+				<input type = "text" name = "new_modules[name]" placeholder = "Name">
+			</td>
+			
+			<td>
+				<input type = "text" name = "new_modules[content]" placeholder = "Content">
+			</td>
+
+			<td>
+				<input type = "number" name = "new_modules[place]" placeholder = "place">
+			</td>
+
+			<td>
+				<input type = "date" name = "new_modules[start_subscribe]" placeholder = "start_subscribe">
+			</td>
+
+			<td>
+				<input type = "date" name = "new_modules[end_subscribe]" placeholder = "end_subscribe">
+			</td>
+
+			<td>
+				<input type = "date" name = "new_modules[start_module]" placeholder = "end_subscribe">
+			</td>
+
+			<td>
+				<input type = "date" name = "new_modules[end_module]" placeholder = "end_subscribe">
+			</td>
+
+			<td>
+				<input type = "number" name = "new_modules[credit]" placeholder = "credit">
+			</td>
+
+			<td>
+				<input type = "submit" value = "Create" name = 'new_user[create]'>
+			</td>
+		</form>
+	</tr>
+	</tbody>
+	</table>
+<% } else { %>
+	You're not allowed to see this page
+<% } %>

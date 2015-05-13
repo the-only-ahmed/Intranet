@@ -1,0 +1,17 @@
+<h1>Forum</h1>
+
+<% threads.forEach(function(thread){ %>
+	<table>
+		<tr>
+	<td>
+		<a href = 'forum_show_thread?id=<%= thread._id %>'> <%= thread.title %></a>
+	<td>
+		<% if (thread.author == user) { %>
+			<td><a href = 'forum_delete_thread?id=<%= thread._id %>'> Delete</a></td>
+		<% } %>
+	
+	</table>
+		</tr>
+<% }) %>
+<br>
+<a href = 'forum_add_thread?id_categ=<%= id_categ %>'> Add thread in categorie </a>

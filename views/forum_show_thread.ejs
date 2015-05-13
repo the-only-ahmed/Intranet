@@ -1,0 +1,33 @@
+<h1>Forum - Thread</h1>
+<% if (typeof user != 'undefined') { %>
+	<table>
+		<tr>
+	<td>Title:
+	<%= thread.title %></td>
+	<td>Content:
+	<%= thread.content %></td>
+	<td>Date:
+	<%= thread.date %> </td>
+
+	<h1>Answers</h1>
+	<br>
+	<% answers.forEach(function(answer){ %>
+	<table>
+		<tr>
+		<td>Author: <%= answer.author %></td>
+		<td>Content: <%= answer.content %></td>
+		<td>Date: <%= answer.date %></td>
+
+		
+		<form method='post'>
+			<input type='text' name='post[id_answer]' value='<%= answer._id%>' hidden>
+			<textarea name = 'post[comment]' placeholder = 'Post' rows = '1' cols = '50' ></textarea>
+			<input type='submit' value='send'></input>
+		</form>
+		<br>
+	<% }) %>
+
+	</table>
+		</tr>
+	<a href='forum_thread_add_answer?id=<%= thread._id %>'> Add answer </a>
+<% } %>

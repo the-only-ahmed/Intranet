@@ -1,0 +1,48 @@
+<h1>Admin - Categ</h1>
+
+<% if (typeof group != 'undefined' && group == 'admin') { %>
+	<table>
+	<thead>
+	<tr>
+		<th>Category</th>
+		<th>Update</th>
+		<th>Delete</th>
+	</tr>
+	</thead>
+	<tbody>
+	<% categs.forEach(function(element)
+	{ %>
+	<tr>
+		<td>
+			<strong><%= element.name %></strong>
+		</td>
+		<td>
+		<form method = 'post'>
+			<input type = "text" name = "update_categ" placeholder = "<%=element.name%>">
+			<input type = "text" name = "id_categ" value = "<%=element._id%>" hidden>
+			<input type = "submit" value = "OK">
+		</td>
+		</form>
+		<form method = 'post'>
+			<td>
+				<input type = "text" name = "categ_id" value = "<%=element._id%>" hidden>
+				<input type = "submit" value = "Delete" >
+			</td>
+		</form>
+	</tr>
+	<% }) %>
+	<tr>
+		<form method = 'post'>
+			<td>
+			<input type = "text" name = "categ" placeholder = "Name">
+			</td>
+			<td>
+			<input type = "submit" value = "Create">
+			</td>
+		</form>
+	</tr>
+	</tbody>
+	</table>
+<% } else { %>
+	You're not allowed to see this page
+<% } %>

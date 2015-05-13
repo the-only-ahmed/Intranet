@@ -1,0 +1,9 @@
+<h1>E-Learning</h1>
+
+		<% activites.forEach(function(activite){ %>
+		<table>
+			<tr>
+				<td><a href="elearn_show?name=<%= activite.name %>"> <%= activite.name %> </a></td>
+			</tr>
+		</table>
+		<% }) %>

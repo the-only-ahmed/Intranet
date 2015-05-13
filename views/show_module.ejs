@@ -1,0 +1,20 @@
+<h1>Profile - Activites list</h1>
+
+		<% activites.forEach(function(activite){ %>
+		<table>
+			<tr>
+				<td><%= activite.name %></td>
+				<td><%= activite.content %></td>
+				<td><%= activite.place %></td>
+				<td><%= activite.start_subscribe %></td>
+				<td><%= activite.end_subscribe %></td>
+				<td><%= activite.start_activite %></td>
+				<td><%= activite.end_activite %></td>
+				<td>min:<%= activite.group_min %> max:<%= activite.group_max %></td>
+				<td><%= activite.peercorrecting %></td>
+				<td><%= activite.group_auto %></td>
+				<td><%= activite.type %></td>
+				<td><%= activite.credit %></td>
+			</tr>
+		</table>
+		<% }) %>

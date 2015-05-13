@@ -1,0 +1,27 @@
+<h1>Profile</h1>
+<% if (group == 'member') { %>
+
+
+		<img src=" <%= users.image %> ">
+		<h2> <strong> First Name : </strong> <%= users.fname %> </h2>
+		<h2> <strong> Name : </strong> <%= users.name %> </h2>
+		<br>
+		<a href="show_profile_module?id=<%= users._id %>"> Show Modules and Activities </a>
+
+<% } %>
+<% if (user != undefined && group == 'ldap') { %>
+<% user_ldap.forEach(function(element){ %>
+				<% if (element['uid'] != undefined) {%>
+
+						<h2> <strong> Last Name : </strong> <%= element['last-name'] %> </h2>
+
+						<h2> <strong> Name : </strong> <%= element['first-name'] %>  </h2>
+
+						<% if (element['picture'] != undefined) { %>
+							<img src = "https://cdn.42.fr/userprofil/profilview/<%= element['uid'] %>.jpg">
+						<% } %>
+						<br>
+					<a href="show_profile_module?id=<%= user_db._id %>"> Show Modules and Activities</a>
+				<% } %>
+			<% }) %>
+<% } %>

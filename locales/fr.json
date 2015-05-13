@@ -1,0 +1,18 @@
+{
+	"home": "Page principale",
+	"forum": "Forum",
+	"list": "Liste des membres",
+	"password": "Changer le mot de passe",
+	"delog": "Se deconnecter",
+	"login": "S'identifier",
+	"subscribe": "Inscription",
+	"admin": "Admin",
+	"connected": "Vous etes connecte",
+	"ntopic": "Nouveau sujet",
+	"ticket": "Poser un ticket",
+	"ldap": "Annuaire",
+	"name": "Nom",
+	"fname": "Prenom",
+	"ticket_show": "Listes des tickets",
+	"welcome": "Bienvenue"
+}

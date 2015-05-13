@@ -1,0 +1,29 @@
+<h1>Profile - My Module</h1>
+
+<% if (typeof user != undefined ) { %>
+
+	<% modules.forEach(function(module){ %>
+	<table>
+		<tr>
+		<td>Name: <a href="show_profile_activite?id_module=<%= module._id %>"> <%= module.name %> </a> </td><br>
+		<td>Credit: <%= module.credit %></td><br>
+		<% if (modules_user.length > 0) { %>
+			<% var tmp = 0; %>
+			<% var credit = 0; %>
+			<% modules_user.forEach(function(module_user){ %>
+				<% if (module._id == module_user.id_module) { %>
+					<% tmp = 1; %>
+					<td><a href="delete_module?id_user=<%= id %>&id_module=<%= module_user.id_module %>"> Delete </a></td><br>
+				<% } %>
+			<% }) %>
+			<% if (tmp != 1 ) {%>
+				<td><a href="add_module?id_user=<%= id %>&id_module=<%= module._id %>"> Add </a></td><br>
+			<% } %>
+
+		<% } else { %>
+
+				<td><a href="add_module?id_user=<%= id %>&id_module=<%= module._id %>"> Add </a></td><br>
+		<% } %>
+		<br>
+	<% }) %>
+<% } %>

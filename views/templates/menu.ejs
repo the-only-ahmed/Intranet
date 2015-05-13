@@ -1,0 +1,64 @@
+<div>
+	<ul id = "menu">
+		<li><img src = '/public/img/logo42.gif' onclick= "location.href = '/';" ></li>
+		<li><a href = '/'> <%=: 'home' | t%> </a></li>
+
+		<% if (typeof user != 'undefined' && group == 'ldap') { %>
+			<li><a href = '/forum'> <%=: 'forum' | t%> </a></li>
+			<li><a href = '/elearn'> <%=: 'elearn' | t%> </a></li>
+			<li><a href = '/db_show_users'> <%=: 'list' | t%> </a></li>
+			<li><a href = '/ldap_show_users'> <%=: 'ldap' | t%> </a></li>
+			<li><a href = '/pwdchange'> <%=: 'password' | t%> </a></li>
+			<li><a href = '/show_profile'> <%=: 'profile' | t%> </a></li>
+			<li><a href = '/ticket'> <%=: 'ticket' | t%> </a></li>
+			<li><a href = '/ticket_show'> <%=: 'ticket_show' | t%> </a></li>
+			<li><a href = '/connectlink'> <%=: 'connectlink' | t%> </a></li>
+			<li><a href = '/disconnect'> <%=: 'delog' | t%> </a></li>
+
+		<% } else if (typeof user != 'undefined' && group == 'admin') { %>
+			<li><a href = '/forum'><%=: 'forum' | t%></a></li>
+			<li><a href = '/elearn'> <%=: 'elearn' | t%> </a></li>
+			<li><a href = '/db_show_users'><%=: 'list' | t%></a></li>
+			<li><a href = '/pwdchange'><%=: 'password' | t%></a></li>
+			<li><a href = '/ticket'><%=: 'ticket' | t%></a></li>
+			<li><a href = '/ticket_show'> <%=: 'ticket_show' | t%> </a></li>
+			<li><a href = '/show_profile'> <%=: 'profile' | t%> </a></li>
+			<li><a href = '/connectlink'> <%=: 'connectlink' | t%> </a></li>
+			<li><a href = '/admin'>Admin</a></li>
+			<li><a href = '/disconnect'><%=: 'delog' | t%></a></li>
+
+		<% } else if (typeof user != 'undefined' && group == 'member') { %>
+			<li><a href = '/forum'><%=: 'forum' | t%></a></li>
+			<li><a href = '/elearn'> <%=: 'elearn' | t%> </a></li>
+			<li><a href = '/db_show_users'><%=: 'list' | t%></a></li>
+			<li><a href = '/pwdchange'><%=: 'password' | t%></a></li>
+			<li><a href = '/show_profile'> <%=: 'profile' | t%> </a></li>
+			<li><a href = '/ticket'><%=: 'ticket' | t%></a></li>
+			<li><a href = '/ticket_show'> <%=: 'ticket_show' | t%> </a></li>
+			<li><a href = '/connectlink'> <%=: 'connectlink' | t%> </a></li>
+			<li><a href = '/disconnect'><%=: 'delog' | t%></a></li>
+
+		<% } else { %>
+			<li><a href = '/login'><%=: 'login' | t%></a></li>
+			<li><a href = '/subscribe'><%=: 'subscribe' | t%></a></li>
+
+		<% } %>
+
+		<% if (typeof user != 'undefined' && group != 'undefined') { %>
+				<br />
+				<div id = "welcome">
+					<%=:'Connected' | t%><br />
+					Group: <%=: group %> <br />
+					<%= user %>
+				</div>
+		<% } %>
+	</ul>
+</div>
+
+<div id = 'lang'>
+	<a href = '/fr'><img src = '/public/img/fr_icon.png'></a>
+	<a href = '/en'><img src = '/public/img/us_icon.png'></a>
+	<a href = '/ar'><img src = '/public/img/ar_icon.jpg'></a>
+</div>
+
+
